@@ -4,6 +4,21 @@ from django.template.loader import get_template, render_to_string
 from django.http import HttpResponse
 import datetime
 
+
+def base(request):
+    context = {
+        'phone_number': '+79119697705',
+        'email': 'sibles.spb@yandex.ru',
+        'menu': {
+            'Каталог': '/catalog',
+            'Услуги': '/services',
+            'О нас': '/about',
+            'Контакты': '/contacts'
+        }
+    }
+    return render(request, '/myshop/myshop/templates/master.html', context)
+
+
 def main(request):
     template = get_template('main/index.html')
     context = {
