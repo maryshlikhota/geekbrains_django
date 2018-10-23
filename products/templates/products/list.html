@@ -5,11 +5,18 @@
 {% endblock %}
 
 {% block page_content %}
-    <ul>
-        {% for itm in products %}
-        <li>
-            <a href="/products/{{ forloop.counter0 }}">{{ itm }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+<div id="about" class="full-height-block-wrap main-block about">
+    <div class="full-height-block container white-block">
+        <div class="inner">
+            <h1>Каталог</h1>
+            <ul>
+                {% for itm in products %}
+                <li>
+                    <a href="/products/{{ forloop.counter0 }}">{{ itm }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
