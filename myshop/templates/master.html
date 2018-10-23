@@ -43,16 +43,23 @@
                     <nav id="menu">
                         <ul class="nav">
                             <li>
-                                <a href="tel:{{ phone_number }}" class="phone-link">
+                                <a href="tel:+79119697705" class="phone-link">
                                     <span class="icon-phone"></span>
-                                    <span class="header-phone">{{ phone_number }}</span>
+                                    <span class="header-phone">8 (911) 969-77-05</span>
                                 </a>
                             </li>
-                            {% for itm, link in menu.items %}
-                                <li class="nav-link">
-                                    <a href="{{ link }}">{{ itm }}</a>
-                                </li>
-                            {% endfor %}
+                            <li class="nav-link">
+                                <a href="/catalog">Каталог</a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/services">Услуги</a>
+                            </li>
+                            <li class="nav-link">
+                                <a class="f-menu-item" href="/about">О нас</a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/contacts">Контакты</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -67,28 +74,31 @@
                 <div class="footer-wrap">
                     <div class="footer-menu">
                         <ul class="f-menu-items">
-                            {% for itm, link in menu.items|slice:":2" %}
-                            <li class="nav-link">
-                                <a class="f-menu-item" href="{{ link }}">{{ itm }}</a>
+                            <li>
+                                <a class="f-menu-item" href="/about">О нас</a>
                             </li>
-                            {% endfor %}
+                            <li>
+                                <a class="f-menu-item" href="/catalog">Каталог</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="footer-menu">
                         <ul class="f-menu-items">
-                            {% for itm, link in menu.items|slice:"2:4" %}
-                            <li class="nav-link">
-                                <a class="f-menu-item" href="{{ link }}">{{ itm }}</a>
+                            <li>
+                                <a class="f-menu-item" href="/services">Услуги</a>
                             </li>
-                            {% endfor %}
+                            <li>
+                                <a class="f-menu-item" href="/contacts">Контакты</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="contact-us">
                         <div class="phone-link">Контактный телефон:
-                            <a href="tel:{{ phone_number }}">{{ phone_number }}</a>
+                            <a href="tel:+79119697705">
+                                8 (911) 969-77-05</a>
                         </div>
                         <div class="mail-link">E-mail:
-                            <a href="mailto:{{ email }}">{{ email }}</a>
+                            <a href="mailto:sibles.spb@yandex.ru">sibles.spb@yandex.ru</a>
                         </div>
                     </div>
                 </div>

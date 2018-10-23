@@ -1,7 +1,7 @@
 from django.urls import path
 
 from main.views import (
-    main, contacts, catalog, services, about, base
+    main, contacts, catalog, services, about
 )
 
 urlpatterns = [

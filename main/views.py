@@ -5,20 +5,6 @@ from django.http import HttpResponse
 import datetime
 
 
-def base(request):
-    context = {
-        'phone_number': '+79119697705',
-        'email': 'sibles.spb@yandex.ru',
-        'menu': {
-            'Каталог': '/catalog',
-            'Услуги': '/services',
-            'О нас': '/about',
-            'Контакты': '/contacts'
-        }
-    }
-    return render(request, '/myshop/myshop/templates/master.html', context)
-
-
 def main(request):
     template = get_template('main/index.html')
     context = {
@@ -120,12 +106,12 @@ def services(request):
 
 def about(request):
     context = {
+        'phone_number': '+79119697705'
         'title': 'О нас',
         'about_text': '''
                 Мы занимаемся доставкой пиломатериалов из лиственницы в Санкт-Петербург напрямую с берегов Байкала,
                  а также перевозкой её по СПб и Ленобласти.
             ''',
         'about_text_order': 'Заказать пиломатериалы оптом или услугу строительной бригады без посредников можно по телефону',
-        'phone_number': '+79119697705'
     }
     return render(request, 'main/about.html', context)
