@@ -106,7 +106,7 @@ def services(request):
 
 def about(request):
     context = {
-        'phone_number': '+79119697705'
+        'phone_number': '+79119697705',
         'title': 'О нас',
         'about_text': '''
                 Мы занимаемся доставкой пиломатериалов из лиственницы в Санкт-Петербург напрямую с берегов Байкала,
