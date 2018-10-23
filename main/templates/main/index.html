@@ -1,16 +1,55 @@
 {% extends 'master.html' %}
 
-{% block page_title %} Main page {% endblock %}
+{% block page_title %}
+    Купить пиломатериалы из сибирской лиственницы в СПб от производителя недорого | Сибирская лиственница
+{% endblock %}
 
 {% block page_content %}
-<h1 class="page__title">
-    {{ title }}
-</h1>
-<h2 class="page__subtitle">
-    {{ subtitle }}
-</h2>
-{% if is_anon == False %}
-<h3>
-    {{ username }}
-</h3>
-{% endif %} {% endblock %}
+<div class="full-height-block-wrap">
+    <div class="full-height-block">
+        <div id="promo" class="main-block promo">
+            <div class="container white-block">
+                <h1>{{ title }}</h1>
+                <h3>{{ subtitle }}</h3>
+                {% for itm in text %}
+                    <p>
+                        {{ itm }}
+                    </p>
+                {% endfor %}
+                <h4>{{ subsubtitle }}</h4>
+                <p>
+                    {{ subsubtext }}
+                </p>
+            </div>
+        </div>
+        <div id="advantages" class="advantages">
+            <div class="container">
+                <div class="cont-wrap">
+                    <div class="advantages-title">
+                        Причины, по которым для строительства
+                        <br> стоит выбрать лиственницу
+                    </div>
+                    <div class="advantages-list">
+                        {% for ad_title, ad_value in advantages.items %}
+                            {% if forloop.counter == 2 %}
+                                <div class="advantages-list">
+                            {% endif %}
+                            <div class="advantages-item">
+                                <div class="advantage-text">
+                                    <div class="advantage-annotation">{{ ad_title }}</div>
+                                    <p>
+                                        {{ad_value}}
+                                    </p>
+                                </div>
+                            </div>
+                            {% if forloop.counter == 3 %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

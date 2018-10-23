@@ -12,6 +12,10 @@
         {% endblock %}
     </title>
 
+    <meta name="description" content="Древесина сибирской лиственницы экстра и прима сортов в СПб. Вагонка, половая и террасная доска, планкен, брус. Бригада строителей для работы любой сложности."
+    />
+    <meta name="keywords" content="пиломатериалы, сибирская лиственница, доска, погонаж, вагонка, половая, террасная доска, палубная доска, планкен, брус, купить, цена, спб, питер, санкт-петербург, ло, бригада строителей, строительные работы"
+    />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="/static/main/styles/normalize.css">
     <link rel="stylesheet" href="/static/main/styles/style.css">
@@ -39,62 +43,52 @@
                     <nav id="menu">
                         <ul class="nav">
                             <li>
-                                <a href="tel:+79119697705" class="phone-link">
+                                <a href="tel:{{ phone_number }}" class="phone-link">
                                     <span class="icon-phone"></span>
-                                    <span class="header-phone">8 (911) 969-77-05</span>
+                                    <span class="header-phone">{{ phone_number }}</span>
                                 </a>
                             </li>
-                            <li class="nav-link">
-                                <a href="/catalog">Каталог</a>
-                            </li>
-                            <li class="nav-link">
-                                <a href="/services">Услуги</a>
-                            </li>
-                            <li class="nav-link">
-                                <a class="f-menu-item" href="/about">О нас</a>
-                            </li>
-                            <li class="nav-link">
-                                <a href="/contacts">Контакты</a>
-                            </li>
+                            {% for itm, link in menu.items %}
+                                <li class="nav-link">
+                                    <a href="{{ link }}">{{ itm }}</a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </nav>
                 </div>
             </div>
         </header>
-
-        {% block page_content %}
-        {% endblock %}
-
+        <div class="content">
+            {% block page_content %}
+            {% endblock %}
+        </div>
         <footer>
             <div class="container">
                 <div class="footer-wrap">
                     <div class="footer-menu">
                         <ul class="f-menu-items">
-                            <li>
-                                <a class="f-menu-item" href="/about">О нас</a>
+                            {% for itm, link in menu.items|slice:":2" %}
+                            <li class="nav-link">
+                                <a class="f-menu-item" href="{{ link }}">{{ itm }}</a>
                             </li>
-                            <li>
-                                <a class="f-menu-item" href="/catalog">Каталог</a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="footer-menu">
                         <ul class="f-menu-items">
-                            <li>
-                                <a class="f-menu-item" href="/services">Услуги</a>
+                            {% for itm, link in menu.items|slice:"2:4" %}
+                            <li class="nav-link">
+                                <a class="f-menu-item" href="{{ link }}">{{ itm }}</a>
                             </li>
-                            <li>
-                                <a class="f-menu-item" href="/contacts">Контакты</a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div class="contact-us">
                         <div class="phone-link">Контактный телефон:
-                            <a href="tel:+79119697705">
-                                8 (911) 969-77-05</a>
+                            <a href="tel:{{ phone_number }}">{{ phone_number }}</a>
                         </div>
                         <div class="mail-link">E-mail:
-                            <a href="mailto:sibles.spb@yandex.ru">sibles.spb@yandex.ru</a>
+                            <a href="mailto:{{ email }}">{{ email }}</a>
                         </div>
                     </div>
                 </div>

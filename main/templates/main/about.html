@@ -1,15 +1,22 @@
 {% extends 'master.html' %}
 
-{% block page_title %} About Page {% endblock %}
+{% block page_title %}
+    О нас | Сибирская лиственница
+{% endblock %}
 
 {% block page_content %}
-<h1>
-    About
-</h1>
-<h3>
-    {{ username|title|slice:":5" }}
-</h3>
-<article>
-    {{ text }}
-</article>
+<div id="about" class="full-height-block-wrap main-block about">
+    <div class="full-height-block container white-block">
+        <div class="inner">
+            <h1>{{ title }}</h1>
+            <p>
+                {{ about_text }}
+            </p>
+            <p>
+                {{about_text_order}}
+                <a href="tel:{{phone_number}}"><span>{{phone_number}}</span></a>.
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock %}
