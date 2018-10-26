@@ -11,9 +11,7 @@
             <h1>Каталог</h1>
             <ul>
                 {% for itm in products %}
-                <li>
-                    <a href="/products/{{ forloop.counter0 }}">{{ itm }}</a>
-                </li>
+                {% include 'products/components/item.html' with count=itm.id name=itm %}
                 {% endfor %}
             </ul>
         </div>

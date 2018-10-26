@@ -16,7 +16,10 @@
     />
     <meta name="keywords" content="пиломатериалы, сибирская лиственница, доска, погонаж, вагонка, половая, террасная доска, палубная доска, планкен, брус, купить, цена, спб, питер, санкт-петербург, ло, бригада строителей, строительные работы"
     />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700" rel="stylesheet">
+    <!-- 
+    {% block page_styles %}
+    {% endblock %} -->
+    
     <link rel="stylesheet" href="/static/main/styles/normalize.css">
     <link rel="stylesheet" href="/static/main/styles/style.css">
     <script type="text/javascript" src="/static/main/js/vendor/jquery/jquery.min.js"></script>
@@ -49,16 +52,16 @@
                                 </a>
                             </li>
                             <li class="nav-link">
-                                <a href="/catalog">Каталог</a>
+                                <a href="{% url 'products:index' %}">Каталог</a>
                             </li>
                             <li class="nav-link">
-                                <a href="/services">Услуги</a>
+                                <a href="{% url 'main:services' %}">Услуги</a>
                             </li>
                             <li class="nav-link">
-                                <a class="f-menu-item" href="/about">О нас</a>
+                                <a class="f-menu-item" href="{% url 'main:about' %}">О нас</a>
                             </li>
                             <li class="nav-link">
-                                <a href="/contacts">Контакты</a>
+                                <a href="{% url 'main:contacts' %}">Контакты</a>
                             </li>
                         </ul>
                     </nav>
@@ -75,20 +78,20 @@
                     <div class="footer-menu">
                         <ul class="f-menu-items">
                             <li>
-                                <a class="f-menu-item" href="/about">О нас</a>
+                                <a class="f-menu-item" href="{% url 'main:about' %}">О нас</a>
                             </li>
                             <li>
-                                <a class="f-menu-item" href="/catalog">Каталог</a>
+                                <a class="f-menu-item" href="{% url 'products:index' %}">Каталог</a>
                             </li>
                         </ul>
                     </div>
                     <div class="footer-menu">
                         <ul class="f-menu-items">
                             <li>
-                                <a class="f-menu-item" href="/services">Услуги</a>
+                                <a class="f-menu-item" href="{% url 'main:services' %}">Услуги</a>
                             </li>
                             <li>
-                                <a class="f-menu-item" href="/contacts">Контакты</a>
+                                <a class="f-menu-item" href="{% url 'main:contacts' %}">Контакты</a>
                             </li>
                         </ul>
                     </div>
