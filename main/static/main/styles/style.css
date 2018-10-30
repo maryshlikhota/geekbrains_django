@@ -255,7 +255,12 @@ nav {
   content: "\e942";
 }
 
-.phone-link .icon-phone {
+.icon-enter:before {
+  content: "\ea13";
+}
+
+.phone-link .icon-phone,
+.icon-enter {
     margin-right: 2px;
     font-size: 16px;
 }

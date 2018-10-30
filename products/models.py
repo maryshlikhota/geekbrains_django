@@ -32,10 +32,14 @@ class Product(models.Model):
         blank=True,
         null=True
     )
-    image = models.ImageField(
-        # имя директории, куда загружаются картинки
-        upload_to='products'
+    image = models.ForeignKey(
+        'images.Image',
+        on_delete=models.PROTECT
     )
+    # image = models.ImageField(
+    #     # имя директории, куда загружаются картинки
+    #     upload_to='products'
+    # )
     # десятичные значения
     cost = models.DecimalField(
         # максимальное кол-во цифр
