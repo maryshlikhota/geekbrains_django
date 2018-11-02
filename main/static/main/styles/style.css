@@ -770,3 +770,45 @@ body {
         display: inline-block;
     }
 }
+
+/* Catalog items */
+.catalog-items {
+    margin: 18px 0 26px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+
+.catalog-items .item {
+    margin: 20px;
+    text-align: center;
+    width: 155px;
+}
+
+.catalog-items .item-cover-cont {
+    display: block;
+    height: 200px;
+    overflow: hidden;
+}
+
+.catalog-items .item-cover {
+    display: block;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.catalog-items .item:hover .item-cover {
+    margin-top: -2px;
+    height: 205px;
+}
+
+/* Pagination */
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.pagination_item {
+    display: inline-block;
+    margin: 10px;
+}

@@ -1,0 +1,11 @@
+.product__image {
+    width: 250px;
+    display: block;
+}
+.product__link {
+    font-size: 20px;
+    margin: 20px 0;
+}
+.product__name {
+    
+}

@@ -1,0 +1,22 @@
+<div id="about" class="full-height-block-wrap main-block about">
+    <div class="full-height-block container white-block">
+        <div class="inner">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %} {% for err in form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    <span>{{ err}}</span>
+                </div>
+                {% endfor %} {% for field in form %}
+                <div class="field-group">
+                    {{ form.field.errors }}
+                    <label for="{{ form.name }}">{{ field.label }}</label>
+                    <br> {{ field }} {% for err in field.errors %}
+                    <small class="field__error">{{ err }}</small>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                <input class="btn" type="submit" value="Submit" style="margin-top: 20px;">
+            </form>
+        </div>
+    </div>
+</div>

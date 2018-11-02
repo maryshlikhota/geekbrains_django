@@ -1,5 +1,11 @@
-<li>
-    <a href="{% url 'products:detail' pk=count %}">
-        {{ name }}
+<div class="item">
+    <a  class="product__link" href="{% url 'products:detail' pk=count %}">
+        <span class="item-cover-cont">
+            <img class="product__image" src="{{ image.url }}" alt="{{ image.title }}">
+        </span>
+        
+        <span class="product__name">
+            {{ name }}  
+        </span>
     </a>
-</li>
+</div>

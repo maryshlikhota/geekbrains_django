@@ -1,5 +1,6 @@
 from django.core.management.base import BaseCommand, CommandError
 from products.models import Product
+from images.models import Image
 
 
 class Command(BaseCommand):
@@ -9,10 +10,12 @@ class Command(BaseCommand):
     def handle(self, *arg, **option):
 
         try:
+            image = Image.objects.first()
             for idx in range(1, option.get('range') + 1):
                 product_name = '[test]-product-%s' % idx
                 Product.objects.create(
-                    title=product_name
+                    title=product_name,
+                    image=image
                 )
                 self.stdout.write(
                     self.style.SUCCESS(product_name)

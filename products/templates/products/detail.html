@@ -8,7 +8,16 @@
 <div id="about" class="full-height-block-wrap main-block about">
     <div class="full-height-block container white-block">
         <div class="inner">
+            <small class="breadcrumbs"><a href="/">Главная</a><a href="{% url 'products:index' %}">\Каталог</a></small>   
             <h1>{{ object }}</h1>
+            <p>
+                {{ object.snippet }}
+            </p>
+            <p>
+                 {{ object.cost }}
+            </p>
+            <img class="product__image" src="{{ object.image.url }}" alt="{{ object }}">
+            
         </div>
     </div>
 </div>
