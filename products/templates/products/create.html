@@ -9,8 +9,8 @@
     <div class="full-height-block container white-block">
         <div class="inner">
             <small class="breadcrumbs">
-                <a href="/">Главная</a>
-                <a href="{% url 'products:index' %}">\Каталог</a>
+                <a href="/">Главная</a> \ 
+                <a href="{% url 'products:index' %}">Каталог</a>
             </small>
             <h1>Создать новый товар</h1>
             {% include 'form.html' with form=form %}
