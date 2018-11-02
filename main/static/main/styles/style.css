@@ -805,6 +805,15 @@ body {
     width: 600px;
 }
 .form input, select, textarea {
+    margin-top: 4px;
+    width: 100%;
+    padding: 2px 4px;
+    box-sizing: border-box;
+}
+.form input, select {
+    height: 27px;
+}
+.field-group  {
     width: 100%;
 }
 .field-group + .field-group {
@@ -814,16 +823,12 @@ body {
     cursor: pointer;
     display: block;
     position: relative;
-    text-align: center;
-    border-radius: 3px;
-    -webkit-transition: background 0.8s ease;
-    -o-transition: background 0.8s ease;
-    transition: background 0.8s ease;
-    font: 14px/14px OpenSans;
+    background: white;
+    border-radius: 1px;
     vertical-align: middle;
     line-height: 29px;
     min-width: 80px;
     padding: 0 10px;
     height: 29px;
-    width: 100px;
+    width: 120px;
 }
