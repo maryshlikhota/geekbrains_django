@@ -1,19 +1,24 @@
 {% extends 'master.html' %}
 
 {% block page_title %}
-Delete {{ obj.title }}
+Удалить {{ obj.title }}
 {% endblock %}
 
 {% block page_content %}
 <div id="about" class="full-height-block-wrap main-block about">
     <div class="full-height-block container white-block">
         <div class="inner">
-            <h1>Delete {{ obj.title }}</h1>
+            <small class="breadcrumbs">
+                <a href="/">Главная</a>
+                <a href="{% url 'products:index' %}">\Каталог</a>
+                <a href="{% url 'products:detail' pk=obj.id %}">\{{ obj.title }}</a>
+            </small>
+            <h1>Удалить {{ obj.title }}</h1>
             <form method="POST">
                 {% csrf_token %} {% if obj.category %}
-                <h4>Are you sure you want to delete {{ obj.category }} {{ obj.title }}</h4>
+                <h4>Вы уверены, что хотите удалить из {{ obj.category }} {{ obj.title }}?</h4>
                 {% else %}
-                <h4>Are you sure you want to delete {{ obj.title }}</h4>
+                <h4>Вы уверены, что хотите удалить {{ obj.title }}?</h4>
                 {% endif %}
                 <input type="submit">
             </form>

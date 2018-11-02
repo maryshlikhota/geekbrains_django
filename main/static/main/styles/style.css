@@ -55,6 +55,14 @@ a:hover {
     color: #247620;
 }
 
+a.red-link {
+    color: #b10000;
+}
+
+a.red-link:hover {
+    color: #ec1414;
+}
+
 img {
     border: none;
 }
@@ -251,16 +259,27 @@ nav {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-phone1:before {
+  content: "\e900";
+}
+.icon-pencil:before {
+  content: "\e905";
+}
 .icon-phone:before {
   content: "\e942";
 }
-
-.icon-enter:before {
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-c:before {
   content: "\ea13";
 }
 
 .phone-link .icon-phone,
-.icon-enter {
+.icon-c, .icon-plus, .icon-pencil {
     margin-right: 2px;
     font-size: 16px;
 }
@@ -776,7 +795,7 @@ body {
     margin: 18px 0 26px;
     display: flex;
     justify-content: space-between;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .catalog-items .item {
@@ -811,4 +830,14 @@ body {
 .pagination_item {
     display: inline-block;
     margin: 10px;
+}
+
+/* Item page */
+.product-update-links {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 14px;
+}
+.product-update-link + .product-update-link{
+    margin-left: 30px;
 }

@@ -10,6 +10,19 @@
         <div class="inner">
             <small class="breadcrumbs"><a href="/">Главная</a><a href="{% url 'products:index' %}">\Каталог</a></small>   
             <h1>{{ object }}</h1>
+            <div class="product-update-links">
+                <a class="product-update-link" href="{% url 'products:update' pk=object.id  %}" class="product_update">
+                    <span class="icon-pencil"></span> Изменить
+                </a>
+                <a class="product-update-link red-link" href="{% url 'products:delete' pk=object.id  %}" class="product_update">
+                    <span class="icon-bin"></span> Удалить
+                </a>
+            </div>
+            <div class="product-update-links">
+                <a class="product-update-link" href="{% url 'products:create' %}" class="product_update">
+                    <span class="icon-plus"></span> Добавить новый товар
+                </a>
+            </div>
             <p>
                 {{ object.snippet }}
             </p>
