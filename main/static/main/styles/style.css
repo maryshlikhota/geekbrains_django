@@ -277,6 +277,16 @@ nav {
 .icon-c:before {
   content: "\ea13";
 }
+.icon-arrow-up:before {
+  content: "\ea3a";
+}
+.icon-arrow-right:before {
+  content: "\ea3c";
+}
+.icon-arrow-left:before {
+  content: "\ea40";
+}
+
 
 .phone-link .icon-phone,
 .icon-c, .icon-plus, .icon-pencil {
@@ -826,10 +836,30 @@ body {
     list-style: none;
     display: flex;
     justify-content: flex-end;
+    margin-right: 10px;
+    font-size: 18px;
 }
 .pagination_item {
     display: inline-block;
-    margin: 10px;
+    line-height: 22px;
+}
+.pagination_item a {
+    padding: 5px 10px;
+}
+.pagination_item:hover {
+    text-decoration: underline;
+}
+.pagination .current {
+    font-size: 22px;
+}
+.pagination_item.current:hover,
+.pagination_item.pagination_item_arrow:hover {
+    text-decoration: none;
+}
+.pagination .icon-arrow-left,
+.pagination .icon-arrow-right {
+    line-height: 20px;
+    font-size: 18px;
 }
 
 /* Item page */
