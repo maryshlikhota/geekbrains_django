@@ -74,7 +74,9 @@ def product_list(request):
 
     # return render(request, 'products/list.html', context)
 
+
     # query = Product.objects.all()
+
 
     query = get_list_or_404(Product)
     page = request.GET.get('page')
@@ -82,7 +84,24 @@ def product_list(request):
 
     products = paginator.get_page(page)
 
-    return render(request, 'products/list.html', {'products': products})
+    context = {
+        'subtitle': 'Сибирская (ангарская) лиственница — хороший выбор для создания дома вашей мечты',
+        'text': [
+            '''
+                    Из имеющихся у нас различных пиломатериалов Вы можете сделать как стены (внутренняя и внешняя обшивка), так и потолок и пол.
+                    Отлично подойдет для дома, бани, террасы или беседки. Доска лиственницы очень прочная, Вы всегда будете
+                    уверенны, что ни перепад температур, ни влажность, ни годы ей не страшны. А приятный рисунок и многообразие
+                    оттенков этой породы достоины того, чтобы не прятать его за краской, а гордо показать, например, под
+                    лаком, расположив панели в любом направлении по Вашему желанию.
+                ''',
+            '''
+                    Лиственница — это всегда экологично, всегда безопасно, всегда красиво.
+                '''
+        ],
+        'products': products
+    }
+
+    return render(request, 'products/list.html', context)
 
 
 def product_detail(request, pk):

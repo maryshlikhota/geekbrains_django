@@ -799,3 +799,31 @@ body {
         display: inline-block;
     }
 }
+
+/* Form */
+.form {
+    width: 600px;
+}
+.form input, select, textarea {
+    width: 100%;
+}
+.field-group + .field-group {
+    margin-top: 20px;
+}
+.form .btn {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    text-align: center;
+    border-radius: 3px;
+    -webkit-transition: background 0.8s ease;
+    -o-transition: background 0.8s ease;
+    transition: background 0.8s ease;
+    font: 14px/14px OpenSans;
+    vertical-align: middle;
+    line-height: 29px;
+    min-width: 80px;
+    padding: 0 10px;
+    height: 29px;
+    width: 100px;
+}

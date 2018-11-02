@@ -18,7 +18,12 @@
                 <a href="/">Главная</a>
             </small>
             <h1>Каталог</h1>
-
+            <h4>{{ subtitle }}</h4>
+            {% for itm in text %}
+            <p>
+                {{ itm }}
+            </p>
+            {% endfor %}
             <div class="catalog-items">
                 {% for itm in products %}
                 {% include 'products/components/item.html' with image=itm.image count=itm.id name=itm %}
