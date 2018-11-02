@@ -1,11 +1,17 @@
 {% extends 'master.html' %}
 
+{% load static %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{% static 'products/products.css' %}">
+{% endblock %} 
+
 {% block page_title %}
     Product detail
 {% endblock %}
 
 {% block page_content %}
-<div id="about" class="full-height-block-wrap main-block about">
+<div id="about product__block" class="full-height-block-wrap main-block about">
     <div class="full-height-block container white-block">
         <div class="inner">
             <small class="breadcrumbs">
@@ -24,14 +30,28 @@
                     <span class="icon-plus"></span> Добавить новый товар
                 </a>
             </div>
-            <p>
-                {{ object.snippet }}
-            </p>
-            <p>
-                 {{ object.cost }}
-            </p>
-            <img class="product__image" src="{{ object.image.url }}" alt="{{ object }}">
-            
+            <div class="product__main">
+                <div class="product__image_cont">
+                    <img class="product__image" src="{{ object.image.url }}" alt="{{ object }}">
+                </div>
+                <div class="product__detail">
+                    {% if object.snippet %}
+                    <span class="product__info">
+                        {{ object.snippet }}
+                    </span>
+                    {% endif %}
+                    {% if object.cost %}
+                    <span class="product__info">
+                        {{ object.cost }} ₽
+                    </span>
+                    {% endif %}
+                    {% if not object.snippet or not object.cost %}
+                    <span class="product__info">
+                        Полная информация о товаре появятся позже
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 </div>
