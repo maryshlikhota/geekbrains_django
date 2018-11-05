@@ -16,7 +16,8 @@
         <div class="inner">
             <small class="breadcrumbs">
                 <a href="/">Главная</a> \
-                <a href="{% url 'products:index' %}">Каталог</a>
+                <a href="{% url 'main:catalog' %}">Каталог</a> \
+                <a href="{% url 'products:index' %}">Товары</a>
             </small>   
             <h1>{{ object }}</h1>
             <div class="product-update-links">

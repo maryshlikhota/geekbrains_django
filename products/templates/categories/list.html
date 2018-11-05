@@ -1,13 +1,13 @@
 {% extends 'master.html' %}
 
 {% load static %}
-    
+
 {% block page_styles %}
 <link rel="stylesheet" href="{% static 'products/products.css' %}">
-{% endblock %} 
+{% endblock %}
 
 {% block page_title %}
-    Products list
+Category list
 {% endblock %}
 
 {% block page_content %}
@@ -18,15 +18,19 @@
                 <a href="/">Главная</a> \
                 <a href="{% url 'main:catalog' %}">Каталог</a>
             </small>
-            <h1>Товары</h1>
-            <div class="catalog-items">
-                {% for itm in products %}
-                    {% include 'products/components/item.html' with image=itm.image count=itm.id name=itm %}
+            <h1>Категории</h1>
+            <div class="category__list">
+                {% for itm in object_list %}
+                <div class="category__item">
+                    <a class="category__item_link" href="{% url 'categories:detail' pk=itm.id %}">
+                        <span>{{ itm.title }}</span>
+                    </a>
+                    <br>
+                    <span class="category__item_snippet">{{ itm.snippet }}</span>
+                </div>
                 {% endfor %}
             </div>
-
-             {% include 'pagination.html' with page=page_obj paginator=pagination %}
-            </ul>
+            {% include 'pagination.html' with page=page.obj paginator=pagination %}
         </div>
     </div>
 </div>

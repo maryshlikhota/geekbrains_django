@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{% static 'products/products.css' %}">
+{% endblock %}
+
+{% block page_title %}
+Category detail
+{% endblock %}
+
+{% block page_content %}
+<div id="about product__block" class="full-height-block-wrap main-block about">
+    <div class="full-height-block container white-block">
+        <div class="inner">
+            <small class="breadcrumbs">
+                <a href="/">Главная</a> \
+                <a href="{% url 'main:catalog' %}">Каталог</a> \ 
+                <a href="{% url 'categories:index' %}">Категории</a>
+            </small>
+            <h1>{{ object }}</h1>
+            <div class="catalog-items">
+            {% for itm in object_list %}
+                {% include '../products/components/item.html' with image=itm.image count=itm.id name=itm %}
+                {% include 'pagination.html' with page=page.obj paginator=pagination %}
+            {% empty %}
+            Products are not exists
+            {% endfor%}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

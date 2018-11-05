@@ -11,9 +11,9 @@
             <small class="breadcrumbs">
                 <a href="/">Главная</a> \ 
                 <a href="{% url 'products:index' %}">Каталог</a> \ 
-                <a href="{% url 'products:detail' pk=obj.id %}">{{ obj.title }}</a>
+                <a href="{% url 'products:detail' pk=object.id %}">{{ object.title }}</a>
             </small>
-            <h1>Изменить {{ obj.title }}</h1>
+            <h1>Изменить {{ object.title }}</h1>
             {% include 'form.html' with form=form %}
         </div>
     </div>

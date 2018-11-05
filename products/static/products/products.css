@@ -107,3 +107,14 @@
 .product__info {
     display: block;
 }
+
+/* Categories */
+.category__list {
+    margin: 20px 0;
+}
+.category__item .category__item_link {
+    font-size: 20px;
+}
+.category__item + .category__item  {
+    margin-top: 20px;
+}

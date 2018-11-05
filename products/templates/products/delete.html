@@ -11,7 +11,7 @@
             <small class="breadcrumbs">
                 <a href="/">Главная</a> \ 
                 <a href="{% url 'products:index' %}">Каталог</a> \ 
-                <a href="{% url 'products:detail' pk=obj.id %}">{{ obj.title }}</a>
+                <a href="{% url 'products:detail' pk=object.id %}">{{ obj.title }}</a>
             </small>
             <h1>Удалить {{ obj.title }}</h1>
             <form method="POST">

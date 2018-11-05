@@ -15,7 +15,22 @@
                 {{ itm }}
             </p>
             {% endfor %}
-            <h4>Прайс-лист на погонажные изделия:</h4>
+
+            <div class="catalog__items">
+                <div class="catalog__item">
+                    <a href="{% url 'categories:index' %}">
+                        <img src="" alt="">
+                        <span>Категории</span>    
+                    </a>
+                </div>
+                <div class="catalog__item">
+                    <a href="{% url 'products:index' %}">
+                        <img src="" alt="">
+                        <span>Список товаров</span>    
+                    </a>
+                </div>
+            </div>
+            <!-- <h4>Прайс-лист на погонажные изделия:</h4>
             <table>
                 <tbody>
                     <tr>
@@ -103,7 +118,7 @@
                         <td>2350₽</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> -->
         </div>
     </div>
 </div>
