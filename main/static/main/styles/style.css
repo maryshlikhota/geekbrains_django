@@ -132,6 +132,28 @@ h4 {
     margin-top: 10px;
 }
 
+.show-more-button:hover {
+    background: #35aa2e;
+}
+
+.show-more-button {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background: #247620;
+    color: white;
+    border-radius: 4px;
+    vertical-align: middle;
+    line-height: 29px;
+    min-width: 80px;
+    padding: 0 10px;
+    height: 29px;
+    width: 120px;
+    text-align: center;
+    transition: all .2s;
+    margin: 0 auto;
+}
+
 /* Header */
 header {
     background: white;

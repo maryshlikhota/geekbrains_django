@@ -1,8 +1,9 @@
 from .products import (
-    ProductCreate, ProductUpdate, ProductDelete,
-    ProductList, ProductDetail,
+    ProductCreateView, ProductUpdateView, ProductDeleteView,
+    ProductListView, ProductDetailView,
     product_create, product_update, product_delete,
-    product_list, product_detail
+    product_list, product_detail,
+    ProductJsonListView
 )
 from .categories import (
     CategoryList, CategoryDetail,
